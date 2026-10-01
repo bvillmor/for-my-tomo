@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Tomo ❤️</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #faf8f4;
+      color: #403b37;
+      font-family: "Noto Sans JP", sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 35px 22px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 540px;
+      text-align: center;
+    }
+
+    .heart {
+      font-family: "Noto Serif JP", serif;
+      font-size: 25px;
+      color: #a87979;
+      margin-bottom: 22px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    h1 {
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(42px, 12vw, 65px);
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      animation: fadeUp 1s ease 0.15s both;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      line-height: 2;
+      color: #77716c;
+      margin-bottom: 38px;
+      animation: fadeUp 1s ease 0.3s both;
+    }
+
+    button {
+      border: 1px solid #d7cfca;
+      background: transparent;
+      color: #514b47;
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #eee8e3;
+      transform: translateY(-2px);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .letter {
+      margin-top: 55px;
+      padding-top: 45px;
+      border-top: 1px solid #e5dfda;
+      animation: fadeIn 1s ease;
+    }
+
+    .section-title {
+      font-family: "Noto Serif JP", serif;
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 27px;
+    }
+
+    .message {
+      font-size: 13px;
+      line-height: 2.4;
+      color: #6f6863;
+    }
+
+    .japanese {
+      margin-top: 28px;
+      font-family: "Noto Serif JP", serif;
+      font-size: 25px;
+      color: #4b4541;
+    }
+
+    .translation {
+      margin-top: 6px;
+      font-size: 10px;
+      color: #99918b;
+      font-style: italic;
+    }
+
+    .miss-section {
+      margin-top: 65px;
+    }
+
+    .miss-message {
+      min-height: 70px;
+      margin: 25px auto;
+      max-width: 390px;
+      font-family: "Noto Serif JP", serif;
+      font-size: 22px;
+      line-height: 1.7;
+      color: #514945;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .date-section {
+      margin-top: 65px;
+      padding-top: 45px;
+      border-top: 1px solid #e5dfda;
+    }
+
+    .date {
+      font-family: "Noto Serif JP", serif;
+      font-size: 25px;
+      margin-bottom: 9px;
+    }
+
+    .date-text {
+      font-size: 11px;
+      color: #8a827c;
+    }
+
+    .ending {
+      margin-top: 70px;
+      padding-top: 45px;
+      padding-bottom: 35px;
+      border-top: 1px solid #e5dfda;
+    }
+
+    .ending h2 {
+      font-family: "Noto Serif JP", serif;
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 18px;
+    }
+
+    .ending p {
+      font-size: 12px;
+      line-height: 2.1;
+      color: #77716c;
+    }
+
+    .tiny-heart {
+      margin-top: 25px;
+      font-size: 18px;
+      color: #a87979;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .page {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="content">
+
+      <div class="heart">♡</div>
+
+      <h1>
+        私のトモへ
+      </h1>
+
+      <p class="subtitle">
+        あなたのために、少しだけ。
+      </p>
+
+      <button onclick="openLetter()">
+        開く 😚
+      </button>
+
+
+      <div id="letter" class="letter hidden">
+
+        <h2 class="section-title">
+          トモへ
+        </h2>
+
+        <p class="message">
+
+          いつも本当にありがとう。<br>
+          いつもそばにいてくれて、<br>
+          優しくしてくれて、<br>
+          そして私を愛してくれてありがとう。<br><br>
+
+          離れていても、<br>
+          私がいつもあなたを想っていることを<br>
+          忘れないでね。<br>
+          ずっとあなたのことを考えてるよ。
+
+        </p>
+
+        <div class="japanese">
+          大好きだよ、トモ。
+        </div>
+
+        <div class="translation">
+          I love you so much.
+        </div>
+
+
+        <div class="miss-section">
+
+          <h2 class="section-title">
+            私が恋しくなったら…
+          </h2>
+
+          <button onclick="showMessage()">
+            ここを押して 😚
+          </button>
+
+          <div id="missMessage" class="miss-message">
+            ♡
+          </div>
+
+        </div>
+
+
+        <div class="date-section">
+
+          <div class="date">
+            2026年9月20日
+          </div>
+
+          <div class="date-text">
+            私たちが始まった日。
+          </div>
+
+        </div>
+
+
+        <div class="ending">
+
+          <h2>
+            おやすみ、私のトモ。
+          </h2>
+
+          <p>
+            夢の中で会おうね。<br>
+            また会える日まで…
+          </p>
+
+          <div class="tiny-heart">
+            ♡
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    function openLetter() {
+
+      const letter = document.getElementById("letter");
+
+      letter.classList.remove("hidden");
+
+      setTimeout(() => {
+
+        letter.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }, 100);
+
+    }
+
+
+    const messages = [
+
+      "会いたいよ。❤️",
+
+      "早く会いたいな。",
+
+      "ずっとあなたのことを想ってるよ。",
+
+      "私の大切な人、大好きだよ。😚",
+
+      "今、私のこと考えてる？",
+
+      "どんなに離れていても、あなたは私の大切な人だよ。",
+
+      "早くまた会いたいよ。",
+
+      "ここからキスを送るね。❤️"
+
+    ];
+
+
+    let lastMessage = -1;
+
+
+    function showMessage() {
+
+      let random;
+
+      do {
+
+        random = Math.floor(
+          Math.random() * messages.length
+        );
+
+      } while (random === lastMessage);
+
+
+      lastMessage = random;
+
+
+      const messageElement =
+        document.getElementById("missMessage");
+
+
+      messageElement.style.opacity = "0";
+
+
+      setTimeout(() => {
+
+        messageElement.textContent =
+          messages[random];
+
+        messageElement.style.opacity = "1";
+
+      }, 250);
+
+    }
+
+  </script>
+
+</body>
+</html>
